@@ -90,9 +90,9 @@ class InitSDKTest extends PHPUnit_Framework_TestCase
             $body = array(
             	"condition" => "new", 
             	"warranty" => "60 dias", 
-            	"currency_id" => "BRL", 
+            	"currency_id" => "MEX", 
             	"accepts_mercadopago" => true, 
-            	"description" => "Lindo Ray_Ban_Original_Wayfarer", 
+            	"description" => "Lindo Ray_Ban_Original_Wayfarer 555", 
             	"listing_type_id" => "bronze", 
             	"title" => "oculos Ray Ban Aviador  Que Troca As Lentes  Lancamento!", 
             	"available_quantity" => 64, 
@@ -266,3 +266,4 @@ function getSimpleCurl() {
 
 	return $return;
 }
+
