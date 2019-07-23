@@ -2,7 +2,6 @@
 session_start();
 require 'Meli/meli.php';
 require 'configApp.php';
-
 $domain = $_SERVER['HTTP_HOST'];
 $appName = explode('.', $domain)[0];
 ?>
@@ -74,7 +73,7 @@ $appName = explode('.', $domain)[0];
                     Check the following examples, they will help you to start working with our API!
                 </p>
                 <p>
-                    Note that these examples work for MLB(Brasil) by default. If you'd like to try them in your own country, please, <a href="https://github.com/mercadolibre/php-sdk/blob/master/configApp.php#L16">update this line</a> in your project, with
+                    Note that these examples work for MLB(Brasil) by default. If you'd like to try them in your own country, please, <a href="https://github.com/Solrac5555/php-sdk/blob/master/configApp.php#L16">update this line</a> in your project, with
                     your own <b>$site_id</b> before executing them.
                 </p>
             </div>
@@ -86,14 +85,11 @@ $appName = explode('.', $domain)[0];
 
                     <?php
                     $meli = new Meli($appId, $secretKey);
-
                     if($_GET['code'] || $_SESSION['access_token']) {
-
                         // If code exist and session is empty
                         if($_GET['code'] && !($_SESSION['access_token'])) {
                             // If the code was in get parameter we authorize
                             $user = $meli->authorize($_GET['code'], $redirectURI);
-
                             // Now we create the sessions with the authenticated user
                             $_SESSION['access_token'] = $user['body']->access_token;
                             $_SESSION['expires_in'] = time() + $user['body']->expires_in;
@@ -104,7 +100,6 @@ $appName = explode('.', $domain)[0];
                                 try {
                                     // Make the refresh proccess
                                     $refresh = $meli->refreshAccessToken();
-
                                     // Now we create the sessions with the new parameters
                                     $_SESSION['access_token'] = $refresh['body']->access_token;
                                     $_SESSION['expires_in'] = time() + $refresh['body']->expires_in;
@@ -114,11 +109,9 @@ $appName = explode('.', $domain)[0];
                                 }
                             }
                         }
-
                         echo '<pre>';
                             print_r($_SESSION);
                         echo '</pre>';
-
                     } else {
                         echo '<p><a alt="Login using MercadoLibre oAuth 2.0" class="btn" href="' . $meli->getAuthUrl($redirectURI, Meli::$AUTH_URL[$siteId]) . '">Authenticate</a></p>';
                     }
@@ -138,7 +131,7 @@ $appName = explode('.', $domain)[0];
                     <p>
                         This is a example of how to list an item in <b>MLB</b> (Brasil).
                        <br /> <b>You need to be authenticated to make it work.</b>
-                       <br /> To be able to list an item in another country, <a href="https://github.com/mercadolibre/php-sdk/blob/master/examples/example_list_item.php">please update this file</a>, with values according to the site Id where your app works, like <b>category_id</b> and <b>currency</b>.
+                       <br /> To be able to list an item in another country, <a href="https://github.com/Solrac5555/php-sdk/blob/master/examples/example_list_item.php">please update this file</a>, with values according to the site Id where your app works, like <b>category_id</b> and <b>currency</b>.
                      <br />
                     </p>
                     <pre class="pre-item">
@@ -166,17 +159,13 @@ $appName = explode('.', $domain)[0];
 
                     <?php
                     $meli = new Meli($appId, $secretKey);
-
                     if($_GET['code'] && $_GET['publish_item']) {
-
                         // If the code was in get parameter we authorize
                         $user = $meli->authorize($_GET['code'], $redirectURI);
-
                         // Now we create the sessions with the authenticated user
                         $_SESSION['access_token'] = $user['body']->access_token;
                         $_SESSION['expires_in'] = $user['body']->expires_in;
                         $_SESSION['refresh_token'] = $user['body']->refresh_token;
-
                         // We can check if the access token in invalid checking the time
                         if($_SESSION['expires_in'] + time() + 1 < time()) {
                             try {
@@ -185,7 +174,6 @@ $appName = explode('.', $domain)[0];
                                 echo "Exception: ",  $e->getMessage(), "\n";
                             }
                         }
-
                         // We construct the item to POST
                         $item = array(
                             "title" => "Item De Teste - Por Favor, Não Ofertar! --kc:off",
@@ -210,17 +198,14 @@ $appName = explode('.', $domain)[0];
     );
                         
                         $response = $meli->post('/items', $item, array('access_token' => $_SESSION['access_token']));
-
                         // We call the post request to list a item
                         echo "<h4>Response</h4>";
                         echo '<pre class="pre-item">';
                         print_r ($response);
                         echo '</pre>';
-
                         echo "<h4>Success! Your test item was listed!</h4>";
                         echo "<p>Go to the permalink to see how it's looking in our site.</p>";
                         echo '<a target="_blank" href="'.$response["body"]->permalink.'">'.$response["body"]->permalink.'</a><br />';
-
                     } else if($_GET['code']) {
                         echo '<p><a alt="Publish Item" class="btn" href="/?code='.$_GET['code'].'&publish_item=ok">Publish Item</a></p>';
                     } else {
@@ -233,7 +218,7 @@ $appName = explode('.', $domain)[0];
                 <div class="col-md-6">
                     <h3>Get started!</h3>
                     <p>Now you know how easy it is to get information from our API. Check the rest of the examples on the SDK, and modify them as you like in order to List an item, update it, and other actions.</p>
-                    <p><a class="btn" href="https://github.com/mercadolibre/php-sdk/tree/master/examples">More examples</a></p>
+                    <p><a class="btn" href="https://github.com/Solrac5555/php-sdk/tree/master/examples">More examples</a></p>
                 </div>
             </div>
 
@@ -263,3 +248,4 @@ $appName = explode('.', $domain)[0];
     </body>
 
     </html>
+
