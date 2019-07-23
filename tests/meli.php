@@ -21,10 +21,9 @@ class InitSDKTest extends PHPUnit_Framework_TestCase
     }
     	#auth_url tests
 		public function testGetAuthUrl() {
-
 			$redirect_uri = self::$meli->getAuthUrl($this->redirect_uri);
 
-			$this->assertEquals('https://auth.mercadolivre.com.br/authorization?client_id='.$this->client_id.'&response_type=code&redirect_uri='.urlencode($this->redirect_uri), $redirect_uri);
+			$this->assertEquals('https://auth.mercadolivre.com.mx/authorization?client_id='.$this->client_id.'&response_type=code&redirect_uri='.urlencode($this->redirect_uri), $redirect_uri);
 
 		}
 
@@ -73,10 +72,10 @@ class InitSDKTest extends PHPUnit_Framework_TestCase
 		public function testGet() {
 			self::$meli->expects($this->any())
              ->method('execute')
-             ->with($this->equalTo('/sites/MLB'))
+             ->with($this->equalTo('/sites/MLM'))
              ->will($this->returnCallback('getSimpleCurl'));
 	       	
-	       	$reponse = self::$meli->get('/sites/MLB');
+	       	$reponse = self::$meli->get('/sites/MLM');
 
 			$this->assertEquals(200, $reponse['httpCode']);
 
@@ -100,7 +99,7 @@ class InitSDKTest extends PHPUnit_Framework_TestCase
             	"price" => 289, 
             	"subtitle" => "Acompanha 3 Pares De Lentes!! Compra 100% Segura", 
             	"buying_mode" => "buy_it_now", 
-            	"category_id" => "MLB5125", 
+            	"category_id" => "MLM5125", 
             	"pictures" => array(
             		array(
             			"source" => "http://upload.wikimedia.org/wikipedia/commons/f/fd/Ray_Ban_Original_Wayfarer.jpg"
@@ -122,7 +121,7 @@ class InitSDKTest extends PHPUnit_Framework_TestCase
 		public function testPut() {
 			self::$meli->expects($this->any())
              ->method('execute')
-             ->with($this->equalTo('/items/MLB123'))
+             ->with($this->equalTo('/items/MLM123'))
              ->will($this->returnCallback('getSimpleCurl'));
 
             $body = array(
@@ -132,7 +131,7 @@ class InitSDKTest extends PHPUnit_Framework_TestCase
 
             $params = array('access_token' => $this->access_token);
 	       	
-	       	$reponse = self::$meli->put('/items/MLB123', $body, $params);
+	       	$reponse = self::$meli->put('/items/MLM123', $body, $params);
 
 			$this->assertEquals(200, $reponse['httpCode']);
 
@@ -155,10 +154,10 @@ class InitSDKTest extends PHPUnit_Framework_TestCase
 		public function testOptions() {
 			self::$meli->expects($this->any())
              ->method('execute')
-             ->with($this->equalTo('/sites/MLB'))
+             ->with($this->equalTo('/sites/MLM'))
              ->will($this->returnCallback('getSimpleCurl'));
 	       	
-	       	$reponse = self::$meli->options('/sites/MLB');
+	       	$reponse = self::$meli->options('/sites/MLM');
 
 			$this->assertEquals(200, $reponse['httpCode']);
 
@@ -168,16 +167,16 @@ class InitSDKTest extends PHPUnit_Framework_TestCase
 		public function testMakePath() {
 			$params = array(
 				'access_token' => 'a access_token',
-				'ids' => 'MLB123,MLB321'
+				'ids' => 'MLM123,MLM321'
 			);
 
 	       	$reponse = self::$meli->make_path('/items', $params);
 			
-			$this->assertEquals('https://api.mercadolibre.com/items?access_token=a access_token&ids=MLB123,MLB321', $reponse);
+			$this->assertEquals('https://api.mercadolibre.com/items?access_token=a access_token&ids=MLM123,MLM321', $reponse);
 
 			$reponse = self::$meli->make_path('items', $params);
 			
-			$this->assertEquals('https://api.mercadolibre.com/items?access_token=a access_token&ids=MLB123,MLB321', $reponse);
+			$this->assertEquals('https://api.mercadolibre.com/items?access_token=a access_token&ids=MLM123,MLM321', $reponse);
 
 			// $reponse = self::$meli->make_path('https://api.mercadolibre.com/items', $params);
 			
