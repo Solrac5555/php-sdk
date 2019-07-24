@@ -22,7 +22,7 @@ $appName = explode('.', $domain)[0];
 
     <body>
         <header class="navbar">
-            <a class="logo" href="#"><iframe width="560" height="315 img src="https://www.ingeniatv.com/wp-content/uploads/2018/07/IngTv9.png" alt=""></a>
+            <a class="logo" href="#"><img src="https://www.ingeniatv.com/wp-content/uploads/2018/07/IngTv9.png" alt="" width="324" height="90"></a>
             <nav>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a target="_blank" href="http://developers.mercadolibre.com/getting-started/">Getting Started</a></li>
@@ -31,18 +31,15 @@ $appName = explode('.', $domain)[0];
                 </ul>
             </nav>
         </header>
-
         <div class="header">
             <div>
                 <h1>API ML PHP SDK</h1>
                 <h2>My PHP SDK for Mercado Libre's API.</h2>
             </div>
         </div>
-
         <main class="container">
             <h3>Hola,</h3>
             <p>This is a sample app, deployed to Heroku with Mercado Libre's PHP SDK. Feel free to use it as a base, to start building your awesome app!</p>
-
             <div class="row">
                 <div class="col-md-6">
                     <h3>How it works?</h3>
@@ -66,7 +63,6 @@ $appName = explode('.', $domain)[0];
                     <p>You'll now be set up to run the app locally, or deploy changes to Heroku.</p>
                 </div>
             </div>
-
             <div class="row">
                 <h3>Examples</h3>
                 <p>
@@ -82,7 +78,6 @@ $appName = explode('.', $domain)[0];
                 <div class="col-sm-6 col-md-6">
                     <h3>oAuth</h3>
                     <p>First authenticate yourself. Authentication is the key to get the most ouf Mercado Libre's API.</p>
-
                     <?php
                     $meli = new Meli($appId, $secretKey);
                     if($_GET['code'] || $_SESSION['access_token']) {
@@ -116,7 +111,6 @@ $appName = explode('.', $domain)[0];
                         echo '<p><a alt="Login using MercadoLibre oAuth 2.0" class="btn" href="' . $meli->getAuthUrl($redirectURI, Meli::$AUTH_URL[$siteId]) . '">Authenticate</a></p>';
                     }
                     ?>
-
                 </div>
                 <div class="col-sm-6 col-md-6">
                     <h3>Get site</h3>
@@ -156,7 +150,6 @@ $appName = explode('.', $domain)[0];
         )
     )
                     </pre>
-
                     <?php
                     $meli = new Meli($appId, $secretKey);
                     if($_GET['code'] && $_GET['publish_item']) {
@@ -212,18 +205,14 @@ $appName = explode('.', $domain)[0];
                         echo '<p><a alt="Publish Item" class="btn disable" href="#">Publish Item</a> </p>';
                     }
                     ?>
-
                 </div>
-
                 <div class="col-md-6">
                     <h3>Get started!</h3>
                     <p>Now you know how easy it is to get information from our API. Check the rest of the examples on the SDK, and modify them as you like in order to List an item, update it, and other actions.</p>
                     <p><a class="btn" href="https://github.com/Solrac5555/php-sdk/tree/master/examples">More examples</a></p>
                 </div>
             </div>
-
             <hr>
-
             <div class="row">
                 <h3>Your Credentials</h3>
                 <div class="row-info col-sm-3 col-md-3">
@@ -246,6 +235,4 @@ $appName = explode('.', $domain)[0];
             <hr>
         </main>
     </body>
-
     </html>
-
