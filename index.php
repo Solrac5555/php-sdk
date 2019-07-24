@@ -22,7 +22,7 @@ $appName = explode('.', $domain)[0];
 
     <body>
         <header class="navbar">
-            <a class="logo" href="#"><img src="https://www.ingeniatv.com/wp-content/uploads/2018/07/IngTv9.png" alt=""></a>
+            <a class="logo" href="#"><iframe width="560" height="315 img src="https://www.ingeniatv.com/wp-content/uploads/2018/07/IngTv9.png" alt=""></a>
             <nav>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a target="_blank" href="http://developers.mercadolibre.com/getting-started/">Getting Started</a></li>
