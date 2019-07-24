@@ -1,3 +1,3 @@
-MeliPHP official MercadoLibre PHP SDK (v.1.0.0)
+Merca4 PHP SDK (v.1.0.0)
 ==========================
 First release
