@@ -170,9 +170,9 @@ $appName = explode('.', $domain)[0];
                         // We construct the item to POST
                         $item = array(
                             "title" => "Articulo de prueba favor no ofertar! --kc:off",
-        "category_id" => "MLM1227",
+        "category_id" => "MLA1430",
         "price" => 10,
-        "currency_id" => "MEX",
+        "currency_id" => "MXN",
         "available_quantity" => 1,
         "buying_mode" => "buy_it_now",
         "listing_type_id" => "bronze",
