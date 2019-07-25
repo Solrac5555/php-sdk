@@ -244,7 +244,7 @@ $appName = explode('.', $domain)[0];
             )
         )
     );                    
-                        $response = $meli->post('/items', $item, array('access_token' => $_SESSION['access_token']));
+                        $response = $meli->post('/items/', $item, array('access_token' => $_SESSION['access_token']));
                         // We call the post request to list a item
                         echo "<h4>Response</h4>";
                         echo '<pre class="pre-item">';
