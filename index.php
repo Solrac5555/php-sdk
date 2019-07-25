@@ -130,9 +130,9 @@ $appName = explode('.', $domain)[0];
                     </p>
                     <pre class="pre-item">
 "title" => "Item De Teste - Por Favor, Não Ofertar! --kc:off",
-        "category_id" => "MLM1227",
+        "category_id" => "MLM257111",
         "price" => 10,
-        "currency_id" => "MEX",
+        "currency_id" => "MXN",
         "available_quantity" => 1,
         "buying_mode" => "buy_it_now",
         "listing_type_id" => "bronze",
