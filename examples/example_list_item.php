@@ -100,5 +100,5 @@ if($_GET['code']) {
 	print_r($meli->post('/items', $item, array('access_token' => $_SESSION['access_token'])));
 	echo '</pre>';
 } else {
-	echo '<a href="' . $meli->getAuthUrl($redirectURI, Meli::$AUTH_URL['MLM']) . '">Login using MercadoLibre oAuth 2.0</a>';
+	echo '<a href="' . $meli->getAuthUrl($redirectURI, Meli::$AUTH_URL['MLM']) . '">Login using MercadoLibre oAuth XXXX 2.0</a>';
 }
