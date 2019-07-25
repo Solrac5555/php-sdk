@@ -123,7 +123,7 @@ $appName = explode('.', $domain)[0];
                 <div class="col-md-6">
                     <h3>Publish an Item</h3>
                     <p>
-                        This is a example of how to list an item in <b>MLB</b> (Brasil).
+                        This is a example of how to list an item in <b>MLM</b> (México).
                        <br /> <b>You need to be authenticated to make it work.</b>
                        <br /> To be able to list an item in another country, <a href="https://github.com/Solrac5555/php-sdk/blob/master/examples/example_list_item.php">please update this file</a>, with values according to the site Id where your app works, like <b>category_id</b> and <b>currency</b>.
                      <br />
@@ -214,7 +214,7 @@ $appName = explode('.', $domain)[0];
             </div>
             <hr>
             <div class="row">
-                <h3>Your Credentials</h3>
+                <h3>Tus Datos</h3>
                 <div class="row-info col-sm-3 col-md-3">
                     <b>App_Id: </b>
                     <?php echo $appId; ?>
