@@ -21,9 +21,9 @@ if($_GET['code']) {
 	// We construct the item to POST
 	$item = array(
 		"title" => "Item de prueva favor no ofertar! --kc:off",
-        "category_id" => "MLM257111",
+        "category_id" => "MLA1051",
         "price" => 10,
-        "currency_id" => "MEX",
+        "currency_id" => "MXN",
         "available_quantity" => 1,
         "buying_mode" => "buy_it_now",
         "listing_type_id" => "bronze",
